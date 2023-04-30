@@ -1,0 +1,109 @@
+[0.0613  Replica 0001]: Replica 0001 starting up
+[0.0618  Replica 0001]: Sent hello message: {'src': '0001', 'dst': 'FFFF', 'leader': '0000', 'type': 'hello'}
+[0.0618  Replica 0000]: Replica 0000 starting up
+[0.0622  Replica 0000]: Sent hello message: {'src': '0000', 'dst': 'FFFF', 'leader': '0000', 'type': 'hello'}
+[0.0652  Replica 0002]: Replica 0002 starting up
+[0.0657  Replica 0002]: Sent hello message: {'src': '0002', 'dst': 'FFFF', 'leader': '0000', 'type': 'hello'}
+[0.0665  Replica 0004]: Replica 0004 starting up
+[0.0665  Replica 0003]: Replica 0003 starting up
+[0.0668  Replica 0004]: Sent hello message: {'src': '0004', 'dst': 'FFFF', 'leader': '0000', 'type': 'hello'}
+[0.0668  Replica 0003]: Sent hello message: {'src': '0003', 'dst': 'FFFF', 'leader': '0000', 'type': 'hello'}
+[5.0577  Replica 0002]: 0002 reset election timer
+[5.0577  Replica 0002]: Received message '{'src': '0019', 'dst': '0002', 'leader': 'FFFF', 'type': 'put', 'MID': 'CG0EV2FHD1I9RQ98', 'key': 'R0YXPEN9AUF79UTZ7HD54PD2LC5JH5EF', 'value': 'e37ca24971c916fc24399f5d1b68a99b'}'
+[5.0578  Replica 0002]: Sent redirect message: {'src': '0002', 'dst': '0019', 'leader': '0000', 'type': 'redirect', 'MID': 'CG0EV2FHD1I9RQ98', 'redirectMessage': {'src': '0019', 'dst': '0002', 'leader': 'FFFF', 'type': 'put', 'MID': 'CG0EV2FHD1I9RQ98', 'key': 'R0YXPEN9AUF79UTZ7HD54PD2LC5JH5EF', 'value': 'e37ca24971c916fc24399f5d1b68a99b'}}
+[5.0593  Replica 0000]: Received message '{'src': '0019', 'dst': '0000', 'leader': '0000', 'type': 'put', 'MID': 'KVMBEFOMMFA841LO', 'key': 'R0YXPEN9AUF79UTZ7HD54PD2LC5JH5EF', 'value': 'e37ca24971c916fc24399f5d1b68a99b'}'
+[5.0616  Replica 0001]: 0001 reset election timer
+[5.0616  Replica 0001]: Received message '{'src': '0000', 'dst': 'FFFF', 'leader': '0000', 'type': 'appendEntries', 'term': 1, 'prevLogIndex': 0, 'prevLogTerm': 0, 'entries': [{'command': {'src': '0019', 'dst': '0000', 'leader': '0000', 'type': 'put', 'MID': 'KVMBEFOMMFA841LO', 'key': 'R0YXPEN9AUF79UTZ7HD54PD2LC5JH5EF', 'value': 'e37ca24971c916fc24399f5d1b68a99b'}, 'term': 1}], 'leaderCommit': 0}'
+[5.0616  Replica 0002]: 0002 reset election timer
+[5.0616  Replica 0002]: Received message '{'src': '0000', 'dst': 'FFFF', 'leader': '0000', 'type': 'appendEntries', 'term': 1, 'prevLogIndex': 0, 'prevLogTerm': 0, 'entries': [{'command': {'src': '0019', 'dst': '0000', 'leader': '0000', 'type': 'put', 'MID': 'KVMBEFOMMFA841LO', 'key': 'R0YXPEN9AUF79UTZ7HD54PD2LC5JH5EF', 'value': 'e37ca24971c916fc24399f5d1b68a99b'}, 'term': 1}], 'leaderCommit': 0}'
+[5.0616  Replica 0003]: 0003 reset election timer
+[5.0616  Replica 0003]: Received message '{'src': '0000', 'dst': 'FFFF', 'leader': '0000', 'type': 'appendEntries', 'term': 1, 'prevLogIndex': 0, 'prevLogTerm': 0, 'entries': [{'command': {'src': '0019', 'dst': '0000', 'leader': '0000', 'type': 'put', 'MID': 'KVMBEFOMMFA841LO', 'key': 'R0YXPEN9AUF79UTZ7HD54PD2LC5JH5EF', 'value': 'e37ca24971c916fc24399f5d1b68a99b'}, 'term': 1}], 'leaderCommit': 0}'
+[5.0616  Replica 0004]: 0004 reset election timer
+[5.0616  Replica 0004]: Received message '{'src': '0000', 'dst': 'FFFF', 'leader': '0000', 'type': 'appendEntries', 'term': 1, 'prevLogIndex': 0, 'prevLogTerm': 0, 'entries': [{'command': {'src': '0019', 'dst': '0000', 'leader': '0000', 'type': 'put', 'MID': 'KVMBEFOMMFA841LO', 'key': 'R0YXPEN9AUF79UTZ7HD54PD2LC5JH5EF', 'value': 'e37ca24971c916fc24399f5d1b68a99b'}, 'term': 1}], 'leaderCommit': 0}'
+[5.0621  Replica 0001]: Traceback (most recent call last):
+[5.0621  Replica 0001]:   File "./3700kvstore", line 341, in <module>
+[5.0621  Replica 0001]:     replica.run()
+[5.0621  Replica 0001]:   File "./3700kvstore", line 68, in run
+[5.0621  Replica 0001]:     self.handle_msg(msg)
+[5.0621  Replica 0001]:   File "./3700kvstore", line 102, in handle_msg
+[5.0621  Replica 0001]:     self.handle_ae_rpc(msg)
+[5.0621  Replica 0001]:   File "./3700kvstore", line 193, in handle_ae_rpc
+[5.0621  Replica 0001]:     tempLog = tempLog[::i]
+[5.0621  Replica 0001]: ValueError: slice step cannot be zero
+[5.0621  Replica 0002]: Traceback (most recent call last):
+[5.0621  Replica 0002]:   File "./3700kvstore", line 341, in <module>
+[5.0621  Replica 0002]:     replica.run()
+[5.0621  Replica 0002]:   File "./3700kvstore", line 68, in run
+[5.0621  Replica 0002]:     self.handle_msg(msg)
+[5.0621  Replica 0002]:   File "./3700kvstore", line 102, in handle_msg
+[5.0621  Replica 0002]:     self.handle_ae_rpc(msg)
+[5.0621  Replica 0002]:   File "./3700kvstore", line 193, in handle_ae_rpc
+[5.0621  Replica 0002]:     tempLog = tempLog[::i]
+[5.0621  Replica 0002]: ValueError: slice step cannot be zero
+[5.0622  Replica 0003]: Traceback (most recent call last):
+[5.0622  Replica 0003]:   File "./3700kvstore", line 341, in <module>
+[5.0622  Replica 0003]:     replica.run()
+[5.0622  Replica 0003]:   File "./3700kvstore", line 68, in run
+[5.0622  Replica 0003]:     self.handle_msg(msg)
+[5.0622  Replica 0003]:   File "./3700kvstore", line 102, in handle_msg
+[5.0622  Replica 0003]:     self.handle_ae_rpc(msg)
+[5.0622  Replica 0003]:   File "./3700kvstore", line 193, in handle_ae_rpc
+[5.0622  Replica 0003]:     tempLog = tempLog[::i]
+[5.0622  Replica 0003]: ValueError: slice step cannot be zero
+[5.0626  Replica 0004]: Traceback (most recent call last):
+[5.0626  Replica 0004]:   File "./3700kvstore", line 341, in <module>
+[5.0626  Replica 0004]:     replica.run()
+[5.0626  Replica 0004]:   File "./3700kvstore", line 68, in run
+[5.0626  Replica 0004]:     self.handle_msg(msg)
+[5.0626  Replica 0004]:   File "./3700kvstore", line 102, in handle_msg
+[5.0626  Replica 0004]:     self.handle_ae_rpc(msg)
+[5.0626  Replica 0004]:   File "./3700kvstore", line 193, in handle_ae_rpc
+[5.0626  Replica 0004]:     tempLog = tempLog[::i]
+[5.0626  Replica 0004]: ValueError: slice step cannot be zero
+Replica 0002 crashed; closing sockets
+Replica 0001 crashed; closing sockets
+Replica 0003 crashed; closing sockets
+Replica 0004 crashed; closing sockets
+[5.6964  Replica 0000]: Added message to log: {'src': '0019', 'dst': '0000', 'leader': '0000', 'type': 'put', 'MID': 'KVMBEFOMMFA841LO', 'key': 'R0YXPEN9AUF79UTZ7HD54PD2LC5JH5EF', 'value': 'e37ca24971c916fc24399f5d1b68a99b'}
+[5.6964  Replica 0000]: sending PUT response KVMBEFOMMFA841LO
+[5.6964  Replica 0000]: Received message '{'src': '0016', 'dst': '0000', 'leader': 'FFFF', 'type': 'put', 'MID': 'IEIHHCLJGAQKPQPB', 'key': '6UINJXJF8KYIUCLVCGEO28HYXS49NZTE', 'value': '3f365b343e1a32b8159cac3820bd6424'}'
+[5.9018  Replica 0000]: Added message to log: {'src': '0016', 'dst': '0000', 'leader': 'FFFF', 'type': 'put', 'MID': 'IEIHHCLJGAQKPQPB', 'key': '6UINJXJF8KYIUCLVCGEO28HYXS49NZTE', 'value': '3f365b343e1a32b8159cac3820bd6424'}
+[5.9018  Replica 0000]: sending PUT response IEIHHCLJGAQKPQPB
+[5.9018  Replica 0000]: Received message '{'src': '0016', 'dst': '0000', 'leader': '0000', 'type': 'get', 'MID': 'R5EA49PBG7XIZ35S', 'key': '6UINJXJF8KYIUCLVCGEO28HYXS49NZTE'}'
+[5.9031  Replica 0000]: Added message to log: {'src': '0016', 'dst': '0000', 'leader': '0000', 'type': 'get', 'MID': 'R5EA49PBG7XIZ35S', 'key': '6UINJXJF8KYIUCLVCGEO28HYXS49NZTE'}
+[5.9037  Replica 0000]: Traceback (most recent call last):
+[5.9038  Replica 0000]:   File "./3700kvstore", line 341, in <module>
+[5.9038  Replica 0000]:     replica.run()
+[5.9038  Replica 0000]:   File "./3700kvstore", line 68, in run
+[5.9038  Replica 0000]:     self.handle_msg(msg)
+[5.9038  Replica 0000]:   File "./3700kvstore", line 92, in handle_msg
+[5.9038  Replica 0000]:     self.handle_get(msg)
+[5.9038  Replica 0000]:   File "./3700kvstore", line 234, in handle_get
+[5.9038  Replica 0000]:     self.update_log(msg, self.currentTerm)
+[5.9038  Replica 0000]:   File "./3700kvstore", line 324, in update_log
+[5.9038  Replica 0000]:     self.log.append({'command': {'key' : msg['key'], 'value' : msg['value']}, 'term' : term})
+[5.9038  Replica 0000]: KeyError: 'value'
+Replica 0000 crashed; closing sockets
+[1m[4m
+# Simulation Finished
+
+## Useful Information and Statistics[0m
+Leaders: 0000
+Replicas that died/were killed: 0/0
+Total messages sent: 12
+Total messages dropped: 0
+Total messages blocked by full sockets: 0
+Total client get()/put() requests: 111/390
+Total duplicate responses: 0
+Total unanswered get()/put() requests: 111/387
+Total redirects: 1
+Total get()/put() failures: 0/0
+Total get() with incorrect response: 0
+Mean/Median query latency: 0.0019973119099934897sec/0.0015718936920166016sec
+[1m[4m
+## Correctness Checks[0m
+[91mError: insufficient put() requests answered (387 > 103 * 0.50)[0m
+[91mError: insufficient get() requests were generated because insufficient put()s were accepted (286 > 397 * 0.10)[0m
+[91mError: too few messages between the replicas[0m
+
+## Correctness Checks Failed, Skipping Performance Tests
