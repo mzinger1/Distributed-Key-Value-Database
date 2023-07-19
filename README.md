@@ -2,7 +2,7 @@
 
 ## Project Description
 
-This project implements a distributed key/value datastore based on the Stanford University research paper 'In Search of an Understandable Consensus Algorithm.' The system is intended to achieve CAP theorem, by working to prodive strong consistency to client requests.
+This project implements a distributed key/value datastore based on the Stanford University research paper 'In Search of an Understandable Consensus Algorithm.' The system is intended to achieve CAP theorem, by working to provide strong consistency to client requests and handle network partitions and failures with accuracy.
 
 ## Design Features
 
