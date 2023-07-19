@@ -11,5 +11,5 @@ This project implements a distributed key/value datastore based on the Stanford 
 - The design of the code is very modular, and there was emphasis on keeping functions relateively short and readable. This included avoiding excessive nesting wherever possible.
 
 
-### Testing 
+## Testing 
 This system was tested heavily using the configuration files. Each test had useful statistics that were relied on to guide in the implementation and catch defects. 
